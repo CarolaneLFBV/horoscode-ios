@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct HoroscodeApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
