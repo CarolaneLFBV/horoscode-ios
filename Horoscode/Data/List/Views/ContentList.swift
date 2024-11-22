@@ -19,19 +19,24 @@ extension AstroSign.Views.SignList {
         var body: some View {
             if vm.signData.isEmpty {
                 Text("Loading...")
+                    .boldTitle()
             } else {
                 ScrollView {
-                    LazyVGrid(columns: columns) {
-                        ForEach(vm.signData, id: \.id) { result in
-                            NavigationLink(destination: AstroSign.Views.DetailView(sign: result)) {
-                                AstroSign.Components.Card(sign: result)
+                    VStack {
+                        LazyVGrid(columns: columns) {
+                            ForEach(vm.signData, id: \.id) { result in
+                                NavigationLink(destination: AstroSign.Views.DetailView(sign: result)) {
+                                    AstroSign.Components.Card(sign: result)
+                                }
                             }
                         }
+                                                
+                        Link("Check the Q&A", destination: URL(string: "https://horoscode.dev/")!)
+                            .buttonModifier()
                     }
                 }
                 .padding()
             }
-            
         }
     }
 }

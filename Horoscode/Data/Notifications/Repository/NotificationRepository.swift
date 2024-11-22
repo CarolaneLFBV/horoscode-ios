@@ -29,35 +29,22 @@ extension AstroSign.Repositories {
                 }
             }
         }
-        
-        func reloadLocalNotifications() {
-            UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-                DispatchQueue.main.async {
-                    self.notifications = notifications
-                }
-            }
-        }
 
-        func createLocalNotification(title: String, body: String, hour: Int, minute: Int, completion: @escaping (Error?) -> Void) {
+        func createLocalNotification(completion: @escaping (Error?) -> Void) {
             var dateComponents = DateComponents()
-            dateComponents.hour = hour
-            dateComponents.minute = minute
+            dateComponents.hour = 6
+            dateComponents.minute = 0
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             
             let notificationContent = UNMutableNotificationContent()
-            notificationContent.title = title
-            notificationContent.body = body
+            notificationContent.title = "Horoscode"
+            notificationContent.body = "Come and check out your horoscode of the day!"
             notificationContent.sound = .default
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: completion)
-        }
-        
-
-        func deleteLocalNotification(identifiers: [String]) {
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
         }
     }
 

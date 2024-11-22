@@ -7,21 +7,24 @@
 
 import SwiftUI
 
-struct SettingsView: View {
-    var body: some View {
-        ZStack {
-            Color("PrimaryBackgroundColor")
-                .ignoresSafeArea()
-            
-            VStack {
-                AboutAppView()
-                SocialsView()
+extension AstroSign.Views {
+    struct SettingsView: View {
+        var body: some View {
+            ZStack {
+                Color("PrimaryBackgroundColor")
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    AstroSign.Views.NotificationCenterView()
+                    AstroSign.Views.AboutAppView()
+                    AstroSign.Views.SocialsView()
+                }
+                .padding()
             }
-            .padding()
         }
     }
 }
 
 #Preview {
-    SettingsView()
+    AstroSign.Views.SettingsView()
 }
