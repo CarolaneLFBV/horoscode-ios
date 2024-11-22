@@ -1,16 +1,14 @@
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.Home.Views {
     struct ContentView: View {
         var body: some View {
             NavigationStack {
-                AstroSign.Views.SignList()
+                AstroSign.List.Views.SignList()
+                    .navigationTitle("Horoscode")
                     .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            AstroSign.Components.NavigationTitle(text: "Horoscode")
-                        }
-                        ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink(destination: SettingsView()) {
+                        ToolbarItem {
+                            NavigationLink(destination: AstroSign.Settings.Views.SettingsView()) {
                                 Label("Settings", systemImage: "gearshape")
                             }
                             .tint(.white)
@@ -22,5 +20,5 @@ extension AstroSign.Views {
 }
 
 #Preview {
-    AstroSign.Views.ContentView()
+    AstroSign.Home.Views.ContentView()
 }

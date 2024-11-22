@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.Notification.Views {
     struct NotificationCenterView: View {
-        @State private var repository = AstroSign.Repositories.NotificationRepository()
+        @State private var repository = AstroSign.Notification.Repositories.NotificationRepository()
         
         var body: some View {
             VStack(alignment: .leading) {
                 Text("Notifications")
                     .boldTitle()
-                Text("You can receive notifications about your horoscode by cling on Enable Notifiactions")
+                Text("You can receive notifications about your horoscode by taping on Enable Notifiactions")
                 
-                AstroSign.Views.RequestAuthorizationButton(repository: repository)
+                AstroSign.Notification.Views.RequestAuthorizationButton(repository: repository)
             }
             .frame(maxWidth: .infinity)
             .rectangleSection()

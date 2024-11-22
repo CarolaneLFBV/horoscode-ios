@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-extension AstroSign.Views.DetailView {
+extension AstroSign.Detail.Components {
     struct PredictionText: View {
         let sign: AstroSign.Entity
         
         var body: some View {
             VStack {
-                Text("🇬🇧 \(sign.contentEn)")
-                    .rectangleSection()
-                Text("🇫🇷 \(sign.contentFr)")
+                Text(sign.getContent())
                     .rectangleSection()
             }
         }

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-extension AstroSign.Components {
+extension Components {
     struct SignIcon: View {
         let signName: String
         
         var body: some View {
-            if let signType = SignType.fromString(signName) {
+            if let signType = AstroSign.SignType.fromString(signName) {
                 Text(signType.imageName)
             } else {
                 Text("Unknown Sign")
@@ -23,5 +23,5 @@ extension AstroSign.Components {
 }
 
 #Preview {
-    AstroSign.Components.SignIcon(signName: "leo")
+   Components.SignIcon(signName: "leo")
 }

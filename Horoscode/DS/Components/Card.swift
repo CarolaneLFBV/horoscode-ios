@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Components {
+extension Components {
     struct Card: View {
         let sign: AstroSign.Entity
         let screenSize: CGRect = UIScreen.main.bounds
@@ -22,9 +22,6 @@ extension AstroSign.Components {
             .rectangleSection()
         }
     }
-    
 }
 
-#Preview {
-    AstroSign.Components.Card(sign: AstroSign.example)
-}
+

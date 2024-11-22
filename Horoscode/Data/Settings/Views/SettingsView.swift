@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.Settings.Views {
     struct SettingsView: View {
         var body: some View {
             ZStack {
@@ -15,9 +15,9 @@ extension AstroSign.Views {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    AstroSign.Views.NotificationCenterView()
-                    AstroSign.Views.AboutAppView()
-                    AstroSign.Views.SocialsView()
+                    AstroSign.Notification.Views.NotificationCenterView()
+                    AstroSign.Settings.Views.AboutView()
+                    AstroSign.Settings.Views.SocialsView()
                 }
                 .padding()
             }
@@ -26,5 +26,5 @@ extension AstroSign.Views {
 }
 
 #Preview {
-    AstroSign.Views.SettingsView()
+    AstroSign.Settings.Views.SettingsView()
 }

@@ -1,49 +1,33 @@
 import SwiftUI
 import UserNotifications
 
-extension AstroSign.Views {
+extension AstroSign.Notification.Views {
     struct RequestAuthorizationButton: View {
-        @State var repository: AstroSign.Repositories.NotificationRepository
-        @State private var statusMessage: String = ""
+        @State var repository: AstroSign.Notification.Repositories.NotificationRepository
+        @State private var notificationStatus: UNAuthorizationStatus?
 
         var body: some View {
             VStack {
-                Button(action: requestAuthorization) {
+                Button(action: {
+                    Task {
+                        await getNotificationStatus()
+                    }
+                }) {
                     Text("Enable Notifications")
-                        .buttonModifier()
                 }
+                .buttonModifier() 
 
-                if !statusMessage.isEmpty {
-                    Text(statusMessage)
-                        .font(.caption)
-                        .foregroundColor(repository.authorizationStatus == .authorized ? .green : .red)
-                        .padding(.top, 10)
-                }
-            }
-            .onAppear {
-                repository.reloadAuthorizationStatus()
+                if let status = notificationStatus {
+                    Text(status.getState())
+                          .font(.caption)
+                          .foregroundColor(status == .authorized ? .green : .red)
+                  }
             }
         }
 
-        private func requestAuthorization() {
-            repository.requestAuthorization()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Allow time for async update
-                if let status = repository.authorizationStatus {
-                    switch status {
-                    case .authorized:
-                        statusMessage = "Notifications enabled successfully!"
-                    case .denied:
-                        statusMessage = "Notifications denied. Please enable them in settings."
-                    case .notDetermined:
-                        statusMessage = "Notification status is pending."
-                    default:
-                        statusMessage = "Unknown notification status."
-                    }
-                } else {
-                    statusMessage = "Failed to retrieve authorization status."
-                }
-            }
+        private func getNotificationStatus() async {
+            await repository.requestAuthorization()
+            notificationStatus = await repository.getAuthorizationStatus()
         }
     }
 

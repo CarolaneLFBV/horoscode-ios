@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-extension AstroSign.Views.SignList {
+extension AstroSign.List.Views {
     struct ContentList: View {
-        @State var vm: AstroSign.ViewModels.ListViewModel
+        @Environment(\.openURL) private var openURL
+        @State var vm: AstroSign.List.ViewModels.ListViewModel
 
         let columns = [
             GridItem(.flexible()),
@@ -20,19 +21,26 @@ extension AstroSign.Views.SignList {
             if vm.signData.isEmpty {
                 Text("Loading...")
                     .boldTitle()
+                    .foregroundStyle(.white)
             } else {
                 ScrollView {
                     VStack {
                         LazyVGrid(columns: columns) {
                             ForEach(vm.signData, id: \.id) { result in
-                                NavigationLink(destination: AstroSign.Views.DetailView(sign: result)) {
-                                    AstroSign.Components.Card(sign: result)
+                                NavigationLink(destination: AstroSign.Detail.Views.DetailView(sign: result)) {
+                                    Components.Card(sign: result)
                                 }
                             }
                         }
                                                 
-                        Link("Check the Q&A", destination: URL(string: "https://horoscode.dev/")!)
-                            .buttonModifier()
+                        Button {
+                            if let url = URL(string: "https://horoscode.dev/") {
+                                openURL(url)
+                            }
+                        } label: {
+                            Label("Q&A", systemImage: "person.fill.questionmark")
+                        }
+                        .buttonModifier()
                     }
                 }
                 .padding()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.Detail.Views {
     struct DetailView: View {
         let sign: AstroSign.Entity
 
@@ -17,16 +17,12 @@ extension AstroSign.Views {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                        AstroSign.Views.DetailView.HeaderView(sign: sign)
-                        AstroSign.Views.DetailView.RatingView(sign: sign)
-                        AstroSign.Views.DetailView.PredictionText(sign: sign)
+                        AstroSign.Detail.Components.HeaderView(sign: sign)
+                        AstroSign.Detail.Components.RatingView(sign: sign)
+                        AstroSign.Detail.Components.PredictionText(sign: sign)
                 }
                 .padding()
             }
         }
     }
-}
-
-#Preview {
-    AstroSign.Views.DetailView(sign: AstroSign.example)
 }

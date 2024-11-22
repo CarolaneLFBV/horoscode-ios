@@ -12,7 +12,7 @@ struct HoroscodeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AstroSign.Views.ContentView()
+            AstroSign.Home.Views.ContentView()
         }
     }
 }

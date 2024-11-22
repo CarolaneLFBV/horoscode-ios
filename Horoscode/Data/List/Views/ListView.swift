@@ -1,8 +1,8 @@
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.List.Views {
     struct SignList: View {
-        @State var vm = AstroSign.ViewModels.ListViewModel()
+        @State var vm = AstroSign.List.ViewModels.ListViewModel()
         var body: some View {
             NavigationStack {
                 ZStack {
@@ -10,11 +10,9 @@ extension AstroSign.Views {
                         .ignoresSafeArea()
                     
                     content
-                        .onAppear {
+                        .task {
                             if vm.signData.isEmpty {
-                                Task {
-                                    await vm.fetchData()
-                                }
+                                await vm.fetchData()
                             }
                         }
                 }
@@ -24,12 +22,12 @@ extension AstroSign.Views {
     }
 }
 
-extension AstroSign.Views.SignList {
+extension AstroSign.List.Views.SignList {
     private var content: some View {
-        AstroSign.Views.SignList.ContentList(vm: vm)
+        AstroSign.List.Views.ContentList(vm: vm)
     }
 }
 
 #Preview {
-    AstroSign.Views.SignList()
+    AstroSign.List.Views.SignList()
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Components {
+extension Components {
     struct NavigationTitle: View {
         var text: String
         var body: some View {
@@ -19,5 +19,5 @@ extension AstroSign.Components {
 }
 
 #Preview {
-    AstroSign.Components.NavigationTitle(text: "Horoscode")
+    Components.NavigationTitle(text: "Horoscode")
 }

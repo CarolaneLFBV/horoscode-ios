@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Views.DetailView {
+extension AstroSign.Detail.Components {
     struct HeaderView: View {
         let sign: AstroSign.Entity
         
@@ -19,7 +19,7 @@ extension AstroSign.Views.DetailView {
                     .frame(height: 140)
                     .padding(20)
                 
-                AstroSign.Views.DetailView.TitleDetail(sign: sign)
+                AstroSign.Detail.Components.TitleDetail(sign: sign)
             }
         }
     }

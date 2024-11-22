@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Modifiers {
+extension Modifiers {
     struct BoldTitle: ViewModifier {
         func body(content: Content) -> some View {
             content
@@ -18,9 +18,8 @@ extension AstroSign.Modifiers {
     }
 }
 
-// MARK: - Extension View
 extension View {
     func boldTitle() -> some View {
-        modifier(AstroSign.Modifiers.BoldTitle())
+        modifier(Modifiers.BoldTitle())
     }
 }

@@ -1,11 +1,11 @@
 import SwiftUI
 
-extension AstroSign.Views {
-    struct AboutAppView: View {
+extension AstroSign.Settings.Views {
+    struct AboutView: View {
         var body: some View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading)  {
-                    Text("About Horoscode")
+                    Text("About")
                         .boldTitle()
                     HStack(alignment: .top) {
                         Image(systemName: "info.circle")
@@ -28,5 +28,5 @@ extension AstroSign.Views {
 }
 
 #Preview {
-    AstroSign.Views.AboutAppView()
+    AstroSign.Settings.Views.AboutView()
 }

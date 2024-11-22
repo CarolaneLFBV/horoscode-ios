@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Views {
+extension AstroSign.Settings.Views {
     struct SocialsView: View {
         var body: some View {
             VStack(alignment: .leading) {
@@ -30,5 +30,5 @@ extension AstroSign.Views {
 }
 
 #Preview {
-    AstroSign.Views.SocialsView()
+    AstroSign.Settings.Views.SocialsView()
 }

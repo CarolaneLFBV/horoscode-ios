@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension AstroSign.Repositories {
+extension AstroSign.List.Repositories {
     class ListRepository {
         enum NetworkError: Error {
             case badUrl, badStatus, badResponse, failedToDecodeResponse

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Views.DetailView {
+extension AstroSign.Detail.Components {
     struct RatingView: View {
         let sign: AstroSign.Entity
         
@@ -18,6 +18,3 @@ extension AstroSign.Views.DetailView {
     }
 }
 
-#Preview {
-    AstroSign.Views.DetailView.RatingView(sign: AstroSign.example)
-}

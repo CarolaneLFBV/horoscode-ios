@@ -1,13 +1,13 @@
 import Foundation
+import SwiftUI
 
-extension AstroSign.ViewModels {
+extension AstroSign.List.ViewModels {
     @Observable
     final class ListViewModel {
-        typealias Entity = AstroSign.Entity
-        var signData = [Entity]()
-        
+        var signData = [AstroSign.Entity]()
+    
         func fetchData() async {
-            guard let downloadedSigns: [Entity] = await AstroSign.Repositories.ListRepository().downloadData(fromURL: "https://horoscode.dev/api/v1/horoscopes") else {return}
+            guard let downloadedSigns: [AstroSign.Entity] = await AstroSign.List.Repositories.ListRepository().downloadData(fromURL: "https://horoscode.dev/api/v1/horoscopes") else {return}
             signData = downloadedSigns
         }
     }

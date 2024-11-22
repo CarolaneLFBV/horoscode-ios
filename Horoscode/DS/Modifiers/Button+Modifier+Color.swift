@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension AstroSign.Modifiers {
+extension Modifiers {
     struct ButtonModifier: ViewModifier {
         func body(content: Content) -> some View {
             content
@@ -19,9 +19,8 @@ extension AstroSign.Modifiers {
     }
 }
 
-// MARK: - Extension View
 extension View {
     func buttonModifier() -> some View {
-        modifier(AstroSign.Modifiers.ButtonModifier())
+        modifier(Modifiers.ButtonModifier())
     }
 }
