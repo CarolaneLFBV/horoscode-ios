@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct NavigationTitle: View {
+    var text: String
     var body: some View {
-        Text("Horoscode")
+        Text(text)
             .font(.largeTitle.bold())
             .foregroundColor(.white)
     }
 }
 
 #Preview {
-    NavigationTitle()
+    NavigationTitle(text: "Horoscode")
 }
