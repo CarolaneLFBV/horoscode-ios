@@ -11,19 +11,20 @@ import UserNotifications
 extension App.UseCase {
     @Observable
     final class NotificationUseCase {
-        
-        enum Constants {
+        private enum Constants {
             enum Time: Int {
-                case notificationHour = 6
-                case notificationMinute = 0
+                case notificationHour = 7
             }
+            
             enum NotificationContent {
                 static let title = String(localized: "NotificationTitle")
                 static let body = String(localized: "NotificationBody")
             }
+            
+            enum Error: Swift.Error {
+                case notificationNotAvailable
+            }
         }
-        
-        private(set) var notifications: [UNNotificationRequest] = []
         
         func getAuthorizationStatus() async -> UNAuthorizationStatus {
             await withUnsafeContinuation { continuation in
@@ -37,25 +38,45 @@ extension App.UseCase {
             await withUnsafeContinuation { continuation in
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, _ in
                     continuation.resume()
+                    
+                    if isGranted {
+                        Task {
+                            do {
+                                try await self.createLocalNotification { error in
+                                    if let error = error {
+                                        print("Failed to schedule notification: \(error)")
+                                    }
+                                }
+                            } catch {
+                                print("Error scheduling notification: \(error)")
+                            }
+                        }
+                    }
                 }
             }
         }
         
-        func createLocalNotification(completion: @escaping (Error?) -> Void) {
-            var dateComponents = DateComponents()
-            dateComponents.hour = Constants.Time.notificationHour.rawValue
-            dateComponents.minute = Constants.Time.notificationMinute.rawValue
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            
+        func createLocalNotification(completion: @escaping (Error?) -> Void) async throws {
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = Constants.NotificationContent.title
             notificationContent.body = Constants.NotificationContent.body
             notificationContent.sound = .default
             
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: trigger)
+            var dateComponents = DateComponents()
+            dateComponents.hour = Constants.Time.notificationHour.rawValue
             
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: completion)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
+                                                        repeats: true)
+            let request = UNNotificationRequest(identifier: UUID().uuidString,
+                                                content: notificationContent,
+                                                trigger: trigger)
+            
+            let notificationCenter = UNUserNotificationCenter.current()
+            do {
+                try await notificationCenter.add(request)
+            } catch {
+                throw Constants.Error.notificationNotAvailable
+            }
         }
     }
 }

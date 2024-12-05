@@ -8,7 +8,6 @@ import SwiftUI
 
 extension Modifiers {
     struct RectangleSection: ViewModifier {
-
         func body(content: Content) -> some View {
             content
                 .padding()

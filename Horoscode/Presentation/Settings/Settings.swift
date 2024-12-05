@@ -17,7 +17,6 @@ extension App.Views {
                 ScrollView {
                     App.Views.NotificationCenter()
                     App.Views.Settings.About()
-                    App.Views.Settings.Socials()
                 }
                 .padding()
             }

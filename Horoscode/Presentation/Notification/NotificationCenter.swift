@@ -15,7 +15,7 @@ extension App.Views {
             VStack(alignment: .leading) {
                 Text("Notifications")
                     .boldTitle()
-                Text("You can receive notifications about your horoscode by taping on Enable Notifiactions")
+                Text("EnableNotificationsConfirm")
                 
                 RequestAuthorizationButton(notificationUseCase: notificationUseCase)
             }

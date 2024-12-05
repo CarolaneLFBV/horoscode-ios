@@ -11,7 +11,7 @@ extension App.Views.NotificationCenter {
                 Button(action: {
                     Task { await getNotificationStatus() }
                 }) {
-                    Text("Enable Notifications")
+                    Text("EnableNotifications")
                 }
                 .buttonModifier()
 

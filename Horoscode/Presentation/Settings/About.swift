@@ -7,21 +7,26 @@ extension App.Views.Settings {
                 VStack(alignment: .leading)  {
                     Text("About")
                         .boldTitle()
+                    
+                    Text("OriginalProject")
+                        .padding(.bottom)
+                    
                     HStack(alignment: .top) {
                         Image(systemName: "info.circle")
-                        Text("Horoscode is here to provide a simple way for people to learn about astrology in a fun way.")
+                        Text("HoroscodeGoal")
                     }
                     .italic()
-                    .padding(.bottom, 4)
-                    
-                    Text("Original Idea Made by Cedric Leprohon.")
                 }
-                .padding(.bottom)
 
-                Link("Visit The Website Here", destination: URL(string: "https://horoscode.dev/")!)
-                    .foregroundStyle(Color("PinkHoroscode"))
+                HStack {
+                    Link("HoroscodeWebsite", destination: URL(string: "https://horoscode.dev/")!)
+                    Link("LinkedIn", destination: URL(string: "https://www.linkedin.com/in/cleprohon/")!)
+                    Link("GitHub", destination: URL(string: "https://github.com/CedricLphn")!)
+                }
+                .foregroundStyle(Color("PinkHoroscode"))
             }
             .frame(maxWidth: .infinity)
+            .padding(.horizontal)
             .rectangleSection()
         }
     }

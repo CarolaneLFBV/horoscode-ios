@@ -3,6 +3,12 @@
   "strings" : {
     "About" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11,8 +17,46 @@
         }
       }
     },
-    "Enable Notifications" : {
+    "Detail" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prediction Of The Day"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prédiction du jour"
+          }
+        }
+      }
+    },
+    "DetailHeadline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By clicking on your astrological sign, you get access to the prediction of the day!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En cliquant sur votre signe astrologique, vous accédez à la prédiction du jour !"
+          }
+        }
+      }
+    },
+    "EnableNotifications" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Notifications"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21,8 +65,30 @@
         }
       }
     },
+    "EnableNotificationsConfirm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can receive notifications about your horoscode by taping on Enable Notifications."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez recevoir des notifications concernant votre horoscope en appuyant sur Activer les notifications."
+          }
+        }
+      }
+    },
     "GitHub" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32,30 +98,61 @@
       }
     },
     "Horoscode" : {
-
-    },
-    "Horoscode is here to provide a simple way for people to learn about astrology in a fun way." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horoscode"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Horoscode offre un moyen simple et ludique aux gens d’en apprendre davantage sur l’astrologie."
+            "value" : "Horoscode"
           }
         }
       }
     },
-    "If you wish to visit his social media profiles, please click on the links below." : {
+    "HoroscodeGoal" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horoscode provides a simple and fun way for people to learn about astrology with coding.\n"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Horoscode offre de manière simple et amusante la découverte de l'astrologie au travers de la programmation informatique."
+          }
+        }
+      }
+    },
+    "HoroscodeWebsite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horoscode Website"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si vous souhaitez visiter ses profils sur les réseaux sociaux, veuillez cliquer sur les liens ci-dessous."
+            "value" : "Site Web Horoscode"
           }
         }
       }
     },
     "LinkedIn" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LinkedIn"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -64,13 +161,18 @@
         }
       }
     },
-    "Loading..." : {
-      "extractionState" : "stale",
+    "Loading" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chargement…"
+            "value" : "Chargement"
           }
         }
       }
@@ -85,8 +187,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Notifications activées!"
+            "state" : "translated",
+            "value" : "Statut de notification inconnu."
           }
         }
       }
@@ -117,8 +219,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Statut de notification inconnu."
+            "state" : "translated",
+            "value" : "Le statut des notifications est en attente."
           }
         }
       }
@@ -133,8 +235,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Échec de la récupération du statut d’autorisation."
+            "state" : "translated",
+            "value" : "Notifications activées!"
           }
         }
       }
@@ -157,6 +259,12 @@
     },
     "Notifications" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifications"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -181,39 +289,46 @@
         }
       }
     },
-    "Original Idea Made by Cedric Leprohon." : {
+    "OK" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Idée originale créée par Cédric Leprohon."
+            "value" : "OK"
           }
         }
       }
     },
-    "Personal Website" : {
+    "OriginalProject" : {
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Site web personnel"
+            "value" : "Original Project From Cedric Leprohon."
           }
-        }
-      }
-    },
-    "Q&A" : {
-      "extractionState" : "stale",
-      "localizations" : {
+        },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "FAQ"
+            "state" : "needs_review",
+            "value" : "Projet d’origine de Cédric Leprohon."
           }
         }
       }
     },
     "Rate: %lld" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate: %lld"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -224,6 +339,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -232,18 +353,14 @@
         }
       }
     },
-    "Socials" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Réseaux Sociaux"
-          }
-        }
-      }
-    },
     "Unknown Sign" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Sign"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -252,22 +369,34 @@
         }
       }
     },
-    "Visit The Website Here" : {
+    "Welcome" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Visiter le site internet"
+            "value" : "Bienvenue"
           }
         }
       }
     },
-    "You can receive notifications about your horoscode by taping on Enable Notifiactions" : {
+    "WelcomeHeadline" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Horoscode! Get to know your prediction of the day in our list of astrological signs!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous pouvez recevoir des notifications à propos de votre horoscode en cliquant sur Activer les notifications"
+            "value" : "Bienvenue sur Horoscode ! Découvrez votre prédiction du jour dans notre liste de signes astrologiques !"
           }
         }
       }

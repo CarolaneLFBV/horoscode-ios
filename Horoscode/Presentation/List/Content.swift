@@ -18,7 +18,7 @@ extension App.Views.List {
                 
         var body: some View {
             if viewModel.horoscodes.isEmpty {
-                ProgressView()
+                ProgressView("Loading")
             } else {
                 ScrollView {
                     VStack {
@@ -36,8 +36,4 @@ extension App.Views.List {
             }
         }
     }
-}
-
-#Preview {
-   // App.Views.List.Content(viewModel: App.Views.List.ViewModel)
 }
