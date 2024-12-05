@@ -65,6 +65,7 @@
       }
     },
     "Loading..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -201,6 +202,7 @@
       }
     },
     "Q&A" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
