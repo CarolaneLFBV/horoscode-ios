@@ -8,7 +8,7 @@ extension App.Views.Settings {
                     Text("About")
                         .boldTitle()
                     
-                    Text("OriginalProject")
+                    Text("OriginalProject") 
                         .padding(.bottom)
                     
                     HStack(alignment: .top) {
