@@ -273,6 +273,22 @@
         }
       }
     },
+    "NotificationStatus" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification Status"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status des Notifications"
+          }
+        }
+      }
+    },
     "NotificationTitle" : {
       "localizations" : {
         "en" : {

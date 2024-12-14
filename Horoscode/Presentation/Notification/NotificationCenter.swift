@@ -16,7 +16,6 @@ extension App.Views {
                 Text("Notifications")
                     .boldTitle()
                 Text("EnableNotificationsConfirm")
-                
                 RequestAuthorizationButton(notificationUseCase: notificationUseCase)
             }
             .frame(maxWidth: .infinity)

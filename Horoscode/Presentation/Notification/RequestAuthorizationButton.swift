@@ -5,6 +5,7 @@ extension App.Views.NotificationCenter {
     struct RequestAuthorizationButton: View {
         @State var notificationUseCase: App.UseCase.NotificationUseCase
         @State private var notificationStatus: UNAuthorizationStatus?
+        @State private var showAlert: Bool = false
 
         var body: some View {
             VStack {
@@ -14,18 +15,20 @@ extension App.Views.NotificationCenter {
                     Text("EnableNotifications")
                 }
                 .buttonModifier()
-
-                if let status = notificationStatus {
-                    Text(status.getState())
-                        .font(.caption)
-                        .foregroundColor(status == .authorized ? .green : .red)
-                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("NotificationStatus"),
+                    message: Text(notificationStatus?.getState() ?? ""),
+                    dismissButton: .default(Text("OK"))
+                )
             }
         }
 
         private func getNotificationStatus() async {
             await notificationUseCase.requestAuthorization()
             notificationStatus = await notificationUseCase.getAuthorizationStatus()
+            showAlert = true
         }
     }
 }
