@@ -17,6 +17,54 @@
         }
       }
     },
+    "badResponseReason" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred with the server"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur s’est produite"
+          }
+        }
+      }
+    },
+    "badStatusReason" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred with the server"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur s’est produite"
+          }
+        }
+      }
+    },
+    "badUrlReason" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred while fetching data"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur s’est produite lors de la récupération des données"
+          }
+        }
+      }
+    },
     "Detail" : {
       "localizations" : {
         "en" : {
@@ -81,6 +129,38 @@
         }
       }
     },
+    "Error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
+    },
+    "failedToDecodeResponseReason" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred while fetching data"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur s’est produite lors de la récupération des données"
+          }
+        }
+      }
+    },
     "GitHub" : {
       "localizations" : {
         "en" : {
@@ -123,7 +203,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Horoscode offre de manière simple et amusante la découverte de l'astrologie au travers de la programmation informatique."
           }
         }
@@ -331,7 +411,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Projet d’origine de Cédric Leprohon."
           }
         }

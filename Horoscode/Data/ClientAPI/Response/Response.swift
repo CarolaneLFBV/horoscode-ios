@@ -11,15 +11,18 @@ extension App.ClientAPI.HoroscodeAPI {
     struct Response: Codable {
         let astroSign: String
         let date: String
-        let contentFr: String
-        let contentEn: String
+        let content: Content
         let rate: Int
+        
+        struct Content: Codable {
+            let fr: String
+            let en: String
+        }
         
         enum CodingKeys: String, CodingKey {
             case astroSign = "sign"
             case date
-            case contentFr = "content_fr"
-            case contentEn = "content_en"
+            case content
             case rate
         }
     }

@@ -11,7 +11,7 @@ extension App.ClientAPI.HoroscodeAPI.Response {
     func convert() -> App.Models.Sign {
         let languageCode = Locale.current.language.languageCode?.identifier.lowercased()
         let isFrench = languageCode?.contains("fr") ?? false
-        let content: String = isFrench ? contentFr : contentEn
+        let content: String = isFrench ? content.fr : content.en
 
         return App.Models.Sign(
             sign: self.astroSign,

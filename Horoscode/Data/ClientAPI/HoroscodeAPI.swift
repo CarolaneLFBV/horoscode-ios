@@ -2,9 +2,16 @@ import Foundation
 
 extension App.ClientAPI {
     struct HoroscodeAPI {
-        private enum Constants {
+        enum Constants {
             enum NetworkError: Error {
-                case badUrl, badStatus, badResponse, failedToDecodeResponse
+                case badUrl(reason: String), badStatus(reason: String), badResponse(reason: String), failedToDecodeResponse(reason: String)
+            }
+            
+            enum NetworkErrorNotification {
+                static let badResponseReason = String(localized: "badResponseReason")
+                static let badUrlReason = String(localized: "badUrlReason")
+                static let badStatusReason = String(localized: "badStatusReason")
+                static let failedToDecodeResponseReason = String(localized: "failedToDecodeResponseReason")
             }
             
             enum Endpoint {
@@ -12,26 +19,22 @@ extension App.ClientAPI {
             }
         }
         
-        func downloadData() async -> [Response]? {
+        func downloadData() async -> Result<[Response], Constants.NetworkError> {
             do {
                 let (data, response) = try await URLSession.shared.data(from: Constants.Endpoint.url)
-                guard let response = response as? HTTPURLResponse else { throw Constants.NetworkError.badResponse }
-                guard response.statusCode >= 200 && response.statusCode < 300 else { throw Constants.NetworkError.badStatus }
-                guard let decodedResponse = try? JSONDecoder().decode([Response].self, from: data) else { throw Constants.NetworkError.failedToDecodeResponse }
-                return decodedResponse
-            } catch Constants.NetworkError.badUrl {
-                print("There was an error creating the URL")
-            } catch Constants.NetworkError.badResponse {
-                print("Did not get a valid response")
-            } catch Constants.NetworkError.badStatus {
-                print("Did not get a 2xx status code from the response")
-            } catch Constants.NetworkError.failedToDecodeResponse {
-                print("Failed to decode response into the given type")
+                guard let response = response as? HTTPURLResponse else {
+                    return .failure(.badResponse(reason: Constants.NetworkErrorNotification.badResponseReason))
+                }
+                guard response.statusCode >= 200 && response.statusCode < 300 else {
+                    return .failure(.badStatus(reason: Constants.NetworkErrorNotification.badStatusReason))
+                }
+                guard let decodedResponse = try? JSONDecoder().decode([Response].self, from: data) else {
+                    return .failure(.failedToDecodeResponse(reason: Constants.NetworkErrorNotification.failedToDecodeResponseReason))
+                }
+                return .success(decodedResponse)
             } catch {
-                print("An error occured downloading the data")
+                return .failure(.badUrl(reason: Constants.NetworkErrorNotification.badUrlReason))
             }
-            
-            return nil
         }
     }
 }

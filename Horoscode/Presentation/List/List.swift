@@ -15,6 +15,13 @@ extension App.Views {
                     Color("PrimaryBackgroundColor")
                         .ignoresSafeArea()
                 }
+                .alert(isPresented: .constant(viewModel.errorMessage != nil)) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(viewModel.errorMessage ?? ""),
+                        dismissButton: .default(Text("OK"), action: { viewModel.errorMessage = nil })
+                    )
+                }
         }
     }
 }

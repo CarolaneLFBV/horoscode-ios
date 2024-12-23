@@ -23,6 +23,7 @@ extension App.UseCase {
             
             enum Error: Swift.Error {
                 case notificationNotAvailable
+                case notificationCreationFailed
             }
         }
         
@@ -34,29 +35,27 @@ extension App.UseCase {
             }
         }
         
-        func requestAuthorization() async {
-            await withUnsafeContinuation { continuation in
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, _ in
-                    continuation.resume()
-                    
-                    if isGranted {
-                        Task {
-                            do {
-                                try await self.createLocalNotification { error in
-                                    if let error = error {
-                                        print("Failed to schedule notification: \(error)")
-                                    }
-                                }
-                            } catch {
-                                print("Error scheduling notification: \(error)")
-                            }
-                        }
-                    }
+        func requestAuthorization(completion: @escaping (Result<Void, Error>) -> Void) async {
+            let isGranted = await withUnsafeContinuation { continuation in
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
+                    continuation.resume(returning: granted)
                 }
             }
+
+            if isGranted {
+                do {
+                    try await createLocalNotification()
+                    completion(.success(()))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.failure(Constants.Error.notificationNotAvailable))
+            }
         }
+
         
-        func createLocalNotification(completion: @escaping (Error?) -> Void) async throws {
+        func createLocalNotification() async throws {
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = Constants.NotificationContent.title
             notificationContent.body = Constants.NotificationContent.body
