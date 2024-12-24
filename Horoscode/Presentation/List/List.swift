@@ -7,7 +7,7 @@ extension App.Views {
         var body: some View {
             content
                 .task {
-                    if viewModel.horoscodes.isEmpty {
+                    if viewModel.signs.isEmpty {
                         await viewModel.fetch()
                     }
                 }
@@ -15,11 +15,11 @@ extension App.Views {
                     Color("PrimaryBackgroundColor")
                         .ignoresSafeArea()
                 }
-                .alert(isPresented: .constant(viewModel.errorMessage != nil)) {
+                .alert(isPresented: $viewModel.isAlertPresented) {
                     Alert(
                         title: Text("Error"),
-                        message: Text(viewModel.errorMessage ?? ""),
-                        dismissButton: .default(Text("OK"), action: { viewModel.errorMessage = nil })
+                        message: Text(viewModel.errorMessage),
+                        dismissButton: .default(Text("OK"), action: { viewModel.isAlertPresented = false })
                     )
                 }
         }

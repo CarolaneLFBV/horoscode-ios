@@ -20,7 +20,7 @@ extension App.Views {
         
         var body: some View {
             ScrollView {
-                App.Views.Detail.HorizontalNav(horoscodes: viewModel.horoscodes,
+                App.Views.Detail.HorizontalNav(signs: viewModel.signs,
                                                selectedSign: $sign)
                 VStack {
                     App.Views.Detail.Header(sign: sign)

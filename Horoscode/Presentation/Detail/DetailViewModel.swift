@@ -10,19 +10,19 @@ import Foundation
 extension App.Views.Detail {
     @Observable
     final class ViewModel {
-        var horoscodes: [App.Models.Sign] = []
-        var errorMessage: String? = nil
+        var signs: [App.Models.Sign] = []
+        var errorMessage: String = ""
+        var isAlertPresented: Bool = false
+        
+        private let repository = App.Repository.Horoscode()
 
         func fetch() async {
-            let result = await App.Repository.Horoscode().fetchData()
-            
-            switch result {
-            case .success(let signs):
-                horoscodes = signs
-                errorMessage = nil
+            switch await repository.fetchData() {
+            case .success(let data):
+                signs = data
             case .failure(let error):
-                horoscodes = []
-                errorMessage = error.localizedDescription
+                errorMessage = error.errorDescription
+                isAlertPresented = true
             }
         }
     }

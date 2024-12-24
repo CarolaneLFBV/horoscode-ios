@@ -1,5 +1,5 @@
 //
-//  GridList.swift
+//  Content.swift
 //  Horoscode
 //
 //  Created by Carolane Lefebvre on 20/11/2024.
@@ -17,13 +17,18 @@ extension App.Views.List {
         ]
                 
         var body: some View {
-            if viewModel.horoscodes.isEmpty {
-                ProgressView("Loading")
+            if viewModel.signs.isEmpty {
+                ZStack {
+                    Color("PrimaryBackgroundColor")
+                        .ignoresSafeArea()
+                    
+                    ProgressView("Loading")
+                }
             } else {
                 ScrollView {
                     VStack {
                         LazyVGrid(columns: columns) {
-                            ForEach(viewModel.horoscodes, id: \.sign) { sign in
+                            ForEach(viewModel.signs, id: \.sign) { sign in
                                 Components.Card(sign: sign)
                             }
                         }

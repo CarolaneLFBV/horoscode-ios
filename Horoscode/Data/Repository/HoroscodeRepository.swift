@@ -14,7 +14,32 @@ extension App.Repository {
             case .success(let data):
                 return .success(data.convert())
             case .failure(let error):
-                return .failure(error)
+                return .failure(.init(error))
+            }
+        }
+    }
+}
+
+extension App.Repository.Horoscode {
+    enum Error: LocalizedError {
+        case noNetwork, serverError, invalidData
+        
+        var errorDescription: String {
+            switch self {
+            case .noNetwork: return String(localized: "error.api.noNetwork")
+            case .serverError: return String(localized: "error.api.serverError")
+            case .invalidData: return String(localized: "error.api.invalidData")
+            }
+        }
+        
+        init(_ error: App.ClientAPI.HoroscodeAPI.Error) {
+            self = switch error {
+            case .noNetwork:
+                    .noNetwork
+            case .badStatus, .badUrl, .badResponse, .badRequest:
+                    .serverError
+            case .failedToDecodeResponse:
+                    .invalidData
             }
         }
     }

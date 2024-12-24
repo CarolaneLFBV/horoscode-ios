@@ -17,54 +17,6 @@
         }
       }
     },
-    "badResponseReason" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "An error has occurred with the server"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Une erreur s’est produite"
-          }
-        }
-      }
-    },
-    "badStatusReason" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "An error has occurred with the server"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Une erreur s’est produite"
-          }
-        }
-      }
-    },
-    "badUrlReason" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "An error has occurred while fetching data"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Une erreur s’est produite lors de la récupération des données"
-          }
-        }
-      }
-    },
     "Detail" : {
       "localizations" : {
         "en" : {
@@ -145,18 +97,50 @@
         }
       }
     },
-    "failedToDecodeResponseReason" : {
+    "error.api.invalidData" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An error has occurred while fetching data"
+            "value" : "An error occurred while reading data."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Une erreur s’est produite lors de la récupération des données"
+            "value" : "Une erreur est survenue lors de la lecture des données."
+          }
+        }
+      }
+    },
+    "error.api.noNetwork" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No network connection available, please check your connection. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur réseau est survenue, veuillez vérifier votre connexion Internet."
+          }
+        }
+      }
+    },
+    "error.api.serverError" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred on the server, please try later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur est survenue lors de la récupération des données, veuillez réessayer ultérieurement."
           }
         }
       }
