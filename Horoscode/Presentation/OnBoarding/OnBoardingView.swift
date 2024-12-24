@@ -35,7 +35,7 @@ struct OnBoardingView: View {
             }
             
             Button {
-                isOnboardingComplete.toggle()
+                isOnboardingComplete = false
             } label: {
                 Text("OK")
                     .font(.title3)
