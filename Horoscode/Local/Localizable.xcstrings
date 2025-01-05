@@ -385,6 +385,22 @@
         }
       }
     },
+    "error.unknown" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Sign"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signe astrologique inconnu"
+          }
+        }
+      }
+    },
     "horoscode.notification.body" : {
       "localizations" : {
         "en" : {
@@ -557,22 +573,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Score: %lld"
-          }
-        }
-      }
-    },
-    "Unknown Sign" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unknown Sign"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Signe astrologique inconnu"
           }
         }
       }

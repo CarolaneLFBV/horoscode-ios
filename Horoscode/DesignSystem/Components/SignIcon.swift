@@ -15,7 +15,7 @@ extension Components {
             if let signType = SignType.fromString(signName) {
                 Text(signType.imageName)
             } else {
-                Text("Unknown Sign")
+                Text("error.unknown")
             }
         }
     }
