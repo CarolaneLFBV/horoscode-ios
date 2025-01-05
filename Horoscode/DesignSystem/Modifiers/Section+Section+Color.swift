@@ -12,6 +12,7 @@ extension Modifiers {
             content
                 .padding()
                 .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .foregroundStyle(Color("SecondaryBackgroundColor"))

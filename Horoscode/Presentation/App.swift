@@ -14,7 +14,6 @@ struct App: SwiftUI.App {
         WindowGroup {
             NavigationStack {
                 App.Views.ContentView()
-
             }
         }
         

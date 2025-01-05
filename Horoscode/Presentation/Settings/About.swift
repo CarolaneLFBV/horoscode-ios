@@ -25,7 +25,6 @@ extension App.Views.Settings {
                 }
                 .foregroundStyle(Color("PinkHoroscode"))
             }
-            .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .rectangleSection()
         }

@@ -17,6 +17,64 @@
         }
       }
     },
+    "app.support.email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hello@horoscode.dev"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hello@horoscode.dev"
+          }
+        }
+      }
+    },
+    "contact.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send an email"
+          }
+        }
+      }
+    },
+    "contact.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Troubling with an issue? Having a question? Please contact us with this email!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un problème ? Une question ? Contactez-nous!"
+          }
+        }
+      }
+    },
+    "contact.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact us"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contactez-nous"
+          }
+        }
+      }
+    },
     "Detail" : {
       "localizations" : {
         "en" : {
@@ -97,17 +155,27 @@
         }
       }
     },
+    "error.api.email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred on the server, please try later."
+          }
+        }
+      }
+    },
     "error.api.invalidData" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An error occurred while reading data."
+            "value" : "An error occurred on the server, please try later."
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Une erreur est survenue lors de la lecture des données."
           }
         }
@@ -141,6 +209,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Une erreur est survenue lors de la récupération des données, veuillez réessayer ultérieurement."
+          }
+        }
+      }
+    },
+    "error.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
           }
         }
       }

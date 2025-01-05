@@ -10,15 +10,15 @@ import SwiftUI
 extension App.Views {
     struct Settings: View {
         var body: some View {
-            ZStack {
+            ScrollView {
+                App.Views.NotificationCenter()
+                App.Views.Settings.About()
+                App.Views.Settings.ContactView()
+            }
+            .padding()
+            .background{
                 Color("PrimaryBackgroundColor")
                     .ignoresSafeArea()
-                
-                ScrollView {
-                    App.Views.NotificationCenter()
-                    App.Views.Settings.About()
-                }
-                .padding()
             }
         }
     }

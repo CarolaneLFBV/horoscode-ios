@@ -18,7 +18,7 @@ extension App.Views {
                 Text("EnableNotificationsConfirm")
                 RequestAuthorizationButton(notificationUseCase: notificationUseCase)
             }
-            .frame(maxWidth: .infinity)
+            .padding(.horizontal)
             .rectangleSection()
         }
     }
