@@ -17,8 +17,8 @@ extension App.UseCase {
             }
             
             enum NotificationContent {
-                static let title = String(localized: "NotificationTitle")
-                static let body = String(localized: "NotificationBody")
+                static let title = String(localized: "app.title")
+                static let body = String(localized: "horoscode.notification.body")
             }
             
             enum Error: Swift.Error {

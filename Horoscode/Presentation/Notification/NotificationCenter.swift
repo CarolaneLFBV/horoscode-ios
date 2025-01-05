@@ -13,9 +13,9 @@ extension App.Views {
         
         var body: some View {
             VStack(alignment: .leading) {
-                Text("Notifications")
+                Text("notifications.title")
                     .boldTitle()
-                Text("EnableNotificationsConfirm")
+                Text("notifications.confirmation")
                 RequestAuthorizationButton(notificationUseCase: notificationUseCase)
             }
             .padding(.horizontal)

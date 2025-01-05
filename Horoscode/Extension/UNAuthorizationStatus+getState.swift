@@ -11,10 +11,10 @@ import UserNotifications
 extension UNAuthorizationStatus {
     enum Constants {
         enum Authorization {
-            static let notificationSuccess = String(localized: "NotificationAuthorizationSuccess")
-            static let notificationDenied = String(localized: "NotificationAuthorizationDenied")
-            static let notificationPending = String(localized: "NotificationAuthorizationPending")
-            static let notificationDefault = String(localized: "NotificationAuthorizationDefault")
+            static let notificationSuccess = String(localized: "notifications.success")
+            static let notificationDenied = String(localized: "notifications.denied")
+            static let notificationPending = String(localized: "notifications.pending")
+            static let notificationDefault = String(localized: "notifications.default")
         }
     }
     

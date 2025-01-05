@@ -2,26 +2,33 @@ import SwiftUI
 
 extension App.Views.Settings {
     struct About: View {
+        
+        private enum Constants {
+            static let websiteUrl = String(localized: "about.website.url")
+            static let linkedinUrl = String(localized: "about.linkedin.url")
+            static let githubUrl = String(localized: "about.github.url")
+        }
+        
         var body: some View {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading)  {
-                    Text("About")
+                    Text("about.title")
                         .boldTitle()
                     
-                    Text("OriginalProject") 
+                    Text("about.description")
                         .padding(.bottom)
                     
                     HStack(alignment: .top) {
                         Image(systemName: "info.circle")
-                        Text("HoroscodeGoal")
+                        Text("about.horoscode.goal")
                     }
                     .italic()
                 }
 
                 HStack {
-                    Link("HoroscodeWebsite", destination: URL(string: "https://horoscode.dev/")!)
-                    Link("LinkedIn", destination: URL(string: "https://www.linkedin.com/in/cleprohon/")!)
-                    Link("GitHub", destination: URL(string: "https://github.com/CedricLphn")!)
+                    Link("about.website", destination: URL(string: Constants.websiteUrl)!)
+                    Link("about.linkedin", destination: URL(string: Constants.linkedinUrl)!)
+                    Link("about.github", destination: URL(string: Constants.githubUrl)!)
                 }
                 .foregroundStyle(Color("PinkHoroscode"))
             }

@@ -22,7 +22,7 @@ extension App.Views.List {
                     Color("PrimaryBackgroundColor")
                         .ignoresSafeArea()
                     
-                    ProgressView("Loading")
+                    ProgressView("app.loading")
                 }
             } else {
                 ScrollView {

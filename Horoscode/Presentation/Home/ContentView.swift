@@ -7,11 +7,11 @@ extension App.Views {
         var body: some View {
             NavigationStack {
                 App.Views.List()
-                    .navigationTitle("Horoscode")
+                    .navigationTitle("app.title")
                     .toolbar {
                         ToolbarItem {
                             NavigationLink(destination: App.Views.Settings()) {
-                                Label("Settings", systemImage: "gearshape")
+                                Label("app.settings", systemImage: "gearshape")
                             }
                             .tint(.white)
                         }

@@ -17,7 +17,7 @@ extension App.Views {
                 }
                 .alert(isPresented: $viewModel.isAlertPresented) {
                     Alert(
-                        title: Text("Error"),
+                        title: Text("error.title"),
                         message: Text(viewModel.errorMessage),
                         dismissButton: .default(Text("OK"), action: { viewModel.isAlertPresented = false })
                     )
